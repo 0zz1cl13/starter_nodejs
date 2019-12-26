@@ -44,3 +44,18 @@ scripts:
 // terminal
 npm run dev 
 
+-> Instalando MongoDB através do Docker
+Após intalação
+// terminal
+sudo docker pull mongo
+sudo docker run --name mongodb -p 27017:27017 mongo
+sudo docker ps 
+
+-> Instalar mongoose 
+npm install mongoose
+
+-> O que é mongoose 
+ORM (encapsula a lógica das operações do banco de dados) de bancos não relacionais com MongoDB. 
+Utiliza códigos Javascript para realizar as operações em banco, sem precisar utilizar
+os comandos nativos do banco. 
+
