@@ -1,0 +1,29 @@
+NodeJS
+-> O que é?
+Permite que o JS rode no lado do servidor tratando requisições e respostas 
+através de API e outros.
+
+-> API Rest 
+Fornece uma interface de backend para atendar a diversos clientes
+como web, mobile e desktop. 
+
+-> Criar estrutura do projeto
+npm init -y
+
+-> Instalar express
+npm install express 
+
+-> O que é express?
+Micro-framework que vai ajudar a trabalhar com rotas e views 
+
+-> package.json e package-lock.json
+package.json é o arquivo que conta com informações do projeto e também
+o que é muito importante, suas dependências. 
+package-lock.json é um arquivo de cache para o nodejs saber quais pacotes estão 
+instalados e de modo a manter um controle de dependência comum 
+
+-> node_modules
+Armazena as dependências do projeto
+
+-> Criar arquivo principal
+server.js
