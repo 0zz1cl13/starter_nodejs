@@ -27,3 +27,20 @@ Armazena as dependências do projeto
 
 -> Criar arquivo principal
 server.js
+
+-> Instalar nodemon
+npm install nodemon -D
+
+-> O que é nodemon?
+Utilizado para fazer auto reload da aplicação após realizar 
+qualquer mudança sem precisar restartar o servidor de forma manual usando
+node server.js 
+
+-> Como utilizar o nodemon?
+Através de um script no arquivo package.json
+// package.json 
+scripts:
+ "dev": "nodemon server.js"
+// terminal
+npm run dev 
+
