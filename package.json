@@ -20,7 +20,8 @@
   "homepage": "https://github.com/0zz1cl13/starter_nodejs#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "mongoose": "^5.8.3"
+    "mongoose": "^5.8.3",
+    "require-dir": "^1.2.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.2"

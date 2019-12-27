@@ -54,8 +54,25 @@ sudo docker ps
 -> Instalar mongoose 
 npm install mongoose
 
--> O que é mongoose 
+-> O que é mongoose?
 ORM (encapsula a lógica das operações do banco de dados) de bancos não relacionais com MongoDB. 
 Utiliza códigos Javascript para realizar as operações em banco, sem precisar utilizar
 os comandos nativos do banco. 
+
+-> Como o mongoose e a lógica de persistência em banco funcionam?
+Para se trabalhar com o banco é necessário criar os Schemas que representam
+as tabelas do banco. Para isso, foi necessário criar uma pasta chamada src que conterá
+códigos internos da aplicação, e em seguida criar uma pasta chamada models, que irá conter 
+os modelos da aplicação. 
+Para cada modelo, é necessário criar um arquivo js: nomeModelo.js, 
+o arquivo .js irá conter as especificações e propriedades de campo
+da tabela. 
+Para se fazer uso do modelo, basta apenas importar o arquivo .js, a persistência
+ocorre com o uso de funções do mongoose.
+
+-> Instalar require-dir 
+Gerencia todos os models e ajuda a importar models. Últil quando 
+existem vários models na aplicação e para não importar cada um, utiliza
+uma importação que mapeia todos os models e os deixa disponíveis através
+de apenas uma importação.
 
