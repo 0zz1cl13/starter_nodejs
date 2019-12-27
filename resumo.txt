@@ -76,3 +76,38 @@ existem vários models na aplicação e para não importar cada um, utiliza
 uma importação que mapeia todos os models e os deixa disponíveis através
 de apenas uma importação.
 
+-> Organização do projeto
+A ideia de organizar o projeto está baseada em dividir as responsabilidades
+em arquivos e trechos de códigos na estrutra MVC.
+A separação é feita de modo separar controllers, models e view. A 
+separação além de ajudar na organização irá ajudar no isolamento de arquivos
+que no momento que precisarem de alteração, estas poderam ser feitas somente
+em um lugar, o que evita de prejudicar erros ou codificações em cascata no projeto. 
+
+// Diretório models 
+O diretório src/models conterá todos os modelos da aplicação. É onde será criada as tabelas através do
+ORM, mongoose nesse caso, e disponibilizadas para uso dos controllers.
+
+// Diretório controllers
+O diretório src/controllers conterá todos os controllers da aplicação.
+Um controller tem como função manipular os Models e retornar repostas para as requisições
+a API. 
+Para saber qual operação utilizar, no arquivo routes.js são declaradas rotas que tem como
+resposta um método de um controller. 
+Assim, é possível indicar qual função do Controller será
+executada quando acontecer uma requisição a uma URL da API.   
+
+// routes.js 
+O arquivo de rotas concentrará todas as rotas que a API irá servir para serem consumidas. 
+Para tanto é utilizado um método do express , express.Route(), que fica responsável por declarar as rotas da API, escutar 
+as requisições e direcionar um controller/método para cada requisição com uma rota correspondente.
+
+// server.js 
+É o arquivo principal da aplicação. Nele é feita a conexão com o banco, declaração de URL e porta da API,
+além de iniciar o servidor backend. 
+
+-> Como ocorre a comunicação neste tipo de organização?
+O arquivo server.js deixará disponível a API para consumo, com a API pronta para consumo
+as requisições serão escutadas pelo arquivo routes.js que receberá a requisição e direcionará 
+um método de uma controller correspondente. A controller por sua vez irá manipular o model e 
+responderá com os resultados da requisição.
