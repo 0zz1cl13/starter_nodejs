@@ -8,7 +8,8 @@ app.use(express.json());
 
 mongoose.connect('mongodb://localhost:27017/nodeapi', { 
   useUnifiedTopology: true, 
-  useNewUrlParser: true
+  useNewUrlParser: true,
+  useFindAndModify: false
 });
 
 
