@@ -14,12 +14,6 @@ requireDir('./src/models');
 
 const Product = mongoose.model('Product');
 
-app.get('/', (req, res) => {
-  Product.create({
-    title: 'Lampada',
-    description: 'Lampada fluorescente',
-    url: 'https://teste.com/lampada'
-  });
-});
+
 
 app.listen(3001);
