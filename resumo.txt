@@ -111,3 +111,35 @@ O arquivo server.js deixará disponível a API para consumo, com a API pronta pa
 as requisições serão escutadas pelo arquivo routes.js que receberá a requisição e direcionará 
 um método de uma controller correspondente. A controller por sua vez irá manipular o model e 
 responderá com os resultados da requisição.
+
+--> Paginação
+Para controlar a quantidade de resultados na listagem de registros, 
+pode ser utilizado um recurso para fazer a paginação dos resultados.
+Basicamente, todos os registros são armazenados e organizados em páginas e 
+número máximo de registros por páginas. 
+Esse controle é essencial para permitir o acesso dos resultados através
+de paginação dos resultados. 
+
+-> Instalar mongoose-paginate
+npm install mongoose-paginate 
+// src/models/Product.js
+const mongoosePaginate = require('mongoose-paginate');
+...
+ProductSchema.plugin(mongoosePaginate);
+
+// ProductController.js
+const page = req.query; 
+const products = await Product.paginate({}, { page, limit: 10 });
+
+-> Disponibilizar a API com Cors 
+A disponibilização da API é parte fundamental da segurança do aplicação, propriedades
+esta deve ser acessível somente por domínios autorizados.
+Assim, o Cors permite configurar os domínios que devem ter acesso a API, bloquando
+assim qualquer outro acesso que não esteja especificado. 
+
+-> Instalar Cors 
+npm install cors
+// server.js 
+const cors = require('cors');
+...
+app.use(cors());
